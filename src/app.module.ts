@@ -3,6 +3,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
+import * as dotenv from 'dotenv'
+import { User } from './typeorm/entities/User';
+dotenv.config()
+
+
+// similar to Data-source
 @Module({
   imports: [TypeOrmModule.forRoot({
     type : "mysql" ,
@@ -11,7 +17,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     username : "root" , 
     password :  process.env.DB_PASSWORD , 
     database : "nest_test_db" ,
-    entities : [] , 
+    entities : [User] , 
     synchronize : true
   })],
   controllers: [AppController],
