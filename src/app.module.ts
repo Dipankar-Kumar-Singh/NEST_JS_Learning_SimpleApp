@@ -9,12 +9,14 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     host : "localhost" ,
     port : 3306 ,
     username : "root" , 
-    password : '1122' , 
+    password :  process.env.DB_PASSWORD , 
     database : "nest_test_db" ,
     entities : [] , 
-    synchronize : true 
+    synchronize : true
   })],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
+
+
