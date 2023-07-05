@@ -16,5 +16,4 @@ export class User {
 
   @Column({default : 0})
   phone : number ;
-
 }

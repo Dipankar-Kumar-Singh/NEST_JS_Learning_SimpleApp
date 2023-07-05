@@ -5,8 +5,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import * as dotenv from 'dotenv'
 import { User } from './typeorm/entities/User';
-dotenv.config()
+import { UsersModule } from './users/users.module';
 
+dotenv.config()
 
 // similar to Data-source
 @Module({
@@ -19,7 +20,7 @@ dotenv.config()
     database : "nest_test_db" ,
     entities : [User] , 
     synchronize : true
-  })],
+  }), UsersModule],
   controllers: [AppController],
   providers: [AppService],
 })
