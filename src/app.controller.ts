@@ -13,9 +13,9 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get("/users") 
-  getTest() : any {
-    // return this.appService.getTest() ;
-    return "OKKK!!" ;
-  }
+  // @Get("/users") 
+  // getTest() : any {
+  //   // return this.appService.getTest() ;
+  //   return "OKKK!!" ;
+  // }
 }
