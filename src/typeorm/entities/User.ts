@@ -14,6 +14,6 @@ export class User {
   @Column({ default: true })
   isActive: boolean;
 
-  @Column({default : 0})
+  @Column({default : 0 , type : 'bigint'})
   phone : number ;
 }
