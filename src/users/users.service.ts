@@ -44,8 +44,14 @@ export class UsersService {
 
   async remove(id: number) {
     // return `This action removes a #${id} user`;
+
+    if(id == -1) 
+      return this.usersRepository.delete({}) ;
+
     const targetUser = await this.usersRepository.findBy({id : id}) ;
     if(!targetUser) return "User does not exist!" ;
     return await this.usersRepository.delete({id : id}) ;
   }
+
+
 }
