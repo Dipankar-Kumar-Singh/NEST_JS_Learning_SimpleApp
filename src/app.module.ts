@@ -12,10 +12,12 @@ dotenv.config()
 // similar to Data-source
 @Module({
   imports: [TypeOrmModule.forRoot({
-    type : "mysql" ,
+    // type : "mysql" ,
+    type : "postgres" ,
     host : "localhost" ,
-    port : 3306 ,
-    username : "root" , 
+    // port : 3306 ,
+    port : 5432 ,
+    username : "postgres" , 
     password :  process.env.DB_PASSWORD , 
     database : "nest_test_db" ,
     entities : [User] , 
@@ -24,6 +26,8 @@ dotenv.config()
   controllers: [AppController],
   providers: [AppService],
 })
+
+
 export class AppModule {}
 
 
